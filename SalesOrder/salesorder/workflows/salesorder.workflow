@@ -90,7 +90,7 @@
 			}],
 			"id": "usertask1",
 			"name": "UserTask1",
-			"documentation": "test git"
+			"documentation": ""
 		},
 		"b5be1adf-09ce-4f1f-bdbf-58a3ec0ae6e5": {
 			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
