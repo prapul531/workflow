@@ -96,7 +96,8 @@
 			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
 			"reference": "/scripts/salesorder/preparemessage.js",
 			"id": "scripttask1",
-			"name": "ScriptTask1"
+			"name": "ScriptTask1",
+			"documentation": "test feature additional"
 		},
 		"9c1d93f3-f7e1-4cda-a0d7-a7eef7dd757e": {
 			"classDefinition": "com.sap.bpm.wfs.MailTask",
