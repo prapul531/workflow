@@ -1,0 +1,16 @@
+_schema-version: "3.2"
+ID: OrderFlow
+version: 0.0.1
+modules:
+  - name: OrderProcess
+    type: com.sap.application.content
+    path: OrderProcess
+    requires:
+      - name: workflow_mta
+        parameters:
+          content-target: true
+resources:
+  - name: workflow_mta
+    parameters:
+      service-name: default_workflow
+    type: org.cloudfoundry.existing-service

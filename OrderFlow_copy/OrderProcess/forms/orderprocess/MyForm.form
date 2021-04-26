@@ -1,0 +1,106 @@
+{
+    "id": "requestdecision",
+    "schemaVersion": "1.1.0",
+    "name": "RequestDecision",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "product_info",
+            "type": "section",
+            "title": "Product Info",
+            "content": [
+                {
+                    "id": "id",
+                    "type": "string",
+                    "label": "ID",
+                    "readOnly": true,
+                    "value": "${context.request.Id}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "name",
+                    "type": "string",
+                    "label": "Name",
+                    "readOnly": true,
+                    "value": "${context.request.Name}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "return",
+                    "type": "string",
+                    "label": "Return",
+                    "readOnly": false,
+                    "value": "${context.response.Return}",
+                    "control": {
+                        "type": "Dropdown",
+                        "properties": {
+                            "items": [
+                                {
+                                    "value": "Yes",
+                                    "displayValue": "Yes"
+                                },
+                                {
+                                    "value": "No",
+                                    "displayValue": "No"
+                                },
+                                {
+                                    "value": "Hold",
+                                    "displayValue": "Hold"
+                                }
+                            ]
+                        }
+                    },
+                    "constraints": {
+                        "required": true,
+                        "enum": [
+                            "Yes",
+                            "No",
+                            "Hold"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "your_comments",
+            "type": "section",
+            "title": "Comments",
+            "content": [
+                {
+                    "id": "your_comments",
+                    "type": "string",
+                    "label": "Your Comments",
+                    "readOnly": false,
+                    "value": "${context.response.comments}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "small"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        },
+        {
+            "id": "reject",
+            "text": "Reject",
+            "decisionType": "negative"
+        }
+    ]
+}

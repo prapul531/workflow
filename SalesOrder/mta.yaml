@@ -1,0 +1,17 @@
+_schema-version: "3.2"
+ID: SalesOrder
+version: 0.0.1
+modules:
+  - name: salesorder
+    type: com.sap.application.content
+    path: salesorder
+    requires:
+      - name: workflow_mta
+        parameters:
+          content-target: true
+resources:
+  - name: workflow_mta
+    parameters:
+      service-plan: lite
+      service-name: default_workflow
+    type: org.cloudfoundry.existing-service
